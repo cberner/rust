@@ -5,15 +5,15 @@ runners:
     env: { }
 
   - &job-linux-4c
-    os: ubuntu-20.04-4core-16gb
+    os: ubuntu-20.04
     <<: *base-job
 
   - &job-linux-8c
-    os: ubuntu-20.04-8core-32gb
+    os: ubuntu-20.04
     <<: *base-job
 
   - &job-linux-16c
-    os: ubuntu-20.04-16core-64gb
+    os: ubuntu-20.04
     <<: *base-job
 
   - &job-macos-xl
@@ -29,11 +29,11 @@ runners:
     <<: *base-job
 
   - &job-windows-8c
-    os: windows-2022-8core-32gb
+    os: windows-2022
     <<: *base-job
 
   - &job-windows-16c
-    os: windows-2022-16core-64gb
+    os: windows-2022
     <<: *base-job
 
   - &job-aarch64-linux

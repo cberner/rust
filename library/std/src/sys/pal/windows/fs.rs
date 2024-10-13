@@ -383,7 +383,9 @@ impl File {
         });
 
         if let Err(ref err) = result {
-            if err.raw_os_error() == Some(c::ERROR_IO_PENDING as i32) {
+            if err.raw_os_error() == Some(c::ERROR_IO_PENDING as i32)
+                || err.raw_os_error() == Some(c::ERROR_LOCK_VIOLATION as i32)
+            {
                 return Ok(false);
             }
         }
@@ -405,7 +407,9 @@ impl File {
         });
 
         if let Err(ref err) = result {
-            if err.raw_os_error() == Some(c::ERROR_IO_PENDING as i32) {
+            if err.raw_os_error() == Some(c::ERROR_IO_PENDING as i32)
+                || err.raw_os_error() == Some(c::ERROR_LOCK_VIOLATION as i32)
+            {
                 return Ok(false);
             }
         }
